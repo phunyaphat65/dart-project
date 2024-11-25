@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 String generateRandomPassword(int length) {
@@ -10,9 +11,13 @@ String generateRandomPassword(int length) {
 }
 
 void main() {
-  int passwordLength = 8;
+  // รับความยาวรหัสผ่านจากผู้ใช้
+  print('กรุณาป้อนความยาวของรหัสผ่าน:');
+  int passwordLength = int.parse(stdin.readLineSync()!);
+
+  // สร้างรหัสผ่านแบบสุ่ม
   String randomPassword = generateRandomPassword(passwordLength);
 
+  // แสดงผลลัพธ์
   print('รหัสผ่านแบบสุ่ม: $randomPassword');
 }
-
